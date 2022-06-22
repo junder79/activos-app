@@ -7,16 +7,13 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {Button, Dialog, Portal, List, Card} from 'react-native-paper';
-
+import Icon from 'react-native-vector-icons/FontAwesome';
 function DetalleActivo() {
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <List.Item
-          title="Nombre Activo"
-          description="Item description"
-          left={props => <List.Icon {...props} icon="camera" />}
-        />
+        <Icon name="rocket" size={30} color="#900" />
+        <List.Item title="Nombre Activo" description="Item description" />
         <List.Item
           title="Personal Asignado"
           description="Item description"
