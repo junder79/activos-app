@@ -12,17 +12,16 @@ function DetalleActivo() {
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Icon name="rocket" size={30} color="#900" />
         <List.Item title="Nombre Activo" description="Item description" />
         <List.Item
           title="Personal Asignado"
           description="Item description"
-          left={props => <List.Icon {...props} icon="folder" />}
+          left={props => <List.Icon {...props} icon="tag" />}
         />
         <List.Item
           title="Código QR"
           description="Item description"
-          left={props => <List.Icon {...props} icon="folder" />}
+          left={props => <List.Icon {...props} icon="qrcode" />}
         />
         <List.Item
           title="Segmento"
