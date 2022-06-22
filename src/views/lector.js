@@ -24,6 +24,12 @@ const Lector = () => {
     navigation.navigate('DetalleActivo');
   };
 
+  const getInfoActivo = () => {
+    axios.get('https://jsonplaceholder.typicode.com/users').then(res => {
+      //const persons = res.data;
+    });
+  };
+
   const [qr, setQR] = useState('');
   const [estadoDialog, setEstadoDialog] = useState(false);
   return (
@@ -33,11 +39,6 @@ const Lector = () => {
           onRead={({data}) => onSuccess(data)}
           flashMode={RNCamera.Constants.FlashMode.off}
           reactivate={true}
-          bottomContent={
-            <TouchableOpacity style={styles.buttonTouchable}>
-              <Text style={styles.buttonText}>OK. Got it!</Text>
-            </TouchableOpacity>
-          }
         />
       </ScrollView>
     </SafeAreaView>

@@ -13,47 +13,57 @@ function DetalleActivo() {
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <List.Item
-          title="First Item"
+          title="Nombre Activo"
+          description="Item description"
+          left={props => <List.Icon {...props} icon="camera" />}
+        />
+        <List.Item
+          title="Personal Asignado"
           description="Item description"
           left={props => <List.Icon {...props} icon="folder" />}
         />
         <List.Item
-          title="First Item"
+          title="Código QR"
           description="Item description"
           left={props => <List.Icon {...props} icon="folder" />}
         />
         <List.Item
-          title="First Item"
+          title="Segmento"
           description="Item description"
           left={props => <List.Icon {...props} icon="folder" />}
         />
         <List.Item
-          title="First Item"
+          title="Tipo Activo"
           description="Item description"
           left={props => <List.Icon {...props} icon="folder" />}
         />
         <List.Item
-          title="First Item"
+          title="Modelo"
           description="Item description"
           left={props => <List.Icon {...props} icon="folder" />}
         />
         <List.Item
-          title="First Item"
+          title="Nº Serie"
           description="Item description"
           left={props => <List.Icon {...props} icon="folder" />}
         />
         <List.Item
-          title="First Item"
+          title="Empresa"
           description="Item description"
           left={props => <List.Icon {...props} icon="folder" />}
         />
         <List.Item
-          title="First Item"
+          title="Obra"
           description="Item description"
           left={props => <List.Icon {...props} icon="folder" />}
         />
         <List.Item
-          title="First Item"
+          title="Estado"
+          description="Item description"
+          left={props => <List.Icon {...props} icon="folder" />}
+        />
+        <List.Item
+          title="Costo Neto"
           description="Item description"
           left={props => <List.Icon {...props} icon="folder" />}
         />
