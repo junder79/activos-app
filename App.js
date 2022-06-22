@@ -12,18 +12,18 @@ import DetalleActivo from './src/componentes/detalle';
 
 const Stack = createNativeStackNavigator();
 
-function LectorComponente({navigation}) {
+function LectorComponente({navigation, route}) {
   return (
     <PaperProvider>
-      <Lector />
+      <Lector navigation={navigation} route={route} />
     </PaperProvider>
   );
 }
 
-function DetalleComponente({navigation}) {
+function DetalleComponente({navigation, route}) {
   return (
     <PaperProvider>
-      <DetalleActivo></DetalleActivo>
+      <DetalleActivo navigation={navigation} route={route}></DetalleActivo>
     </PaperProvider>
   );
 }

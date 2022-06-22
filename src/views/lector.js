@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -7,42 +7,41 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import { Button, Dialog, Portal, Paragraph, Appbar } from 'react-native-paper';
+import {Button, Dialog, Portal, Paragraph, Appbar} from 'react-native-paper';
 import QRCodeScanner from 'react-native-qrcode-scanner';
-import { RNCamera } from 'react-native-camera';
+import {RNCamera} from 'react-native-camera';
 import {
   NavigationContainer,
   CommonActions,
   useNavigation,
 } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 const Lector = () => {
   const navigation = useNavigation();
-  const onSuccess = async(e) => {
+  const onSuccess = async e => {
     setQR(e);
-    try{
+    try {
       const datosActivo = await getInfoActivo(e);
-     
-      navigation.navigate('DetalleActivo', datosActivo);
-    } catch(error){
+
+      navigation.navigate('DetalleActivo', {datosActivo: datosActivo});
+    } catch (error) {
       console.error(error);
     }
-   
   };
 
-  const getInfoActivo = async (qr) => {
+  const getInfoActivo = async qr => {
     try {
-      const resp = await fetch(`https://grupohexxa.cl/sistemas/activos/APP/api-activos.php?codigoString=${qr}`);
+      const resp = await fetch(
+        `https://grupohexxa.cl/sistemas/activos/APP/api-activos.php?codigoString=${qr}`,
+      );
 
       const [data] = await resp.json();
 
       return data;
-
     } catch (error) {
       console.error(error);
     }
-
   };
 
   const [qr, setQR] = useState('');
@@ -51,7 +50,7 @@ const Lector = () => {
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <QRCodeScanner
-          onRead={({ data }) => onSuccess(data)}
+          onRead={({data}) => onSuccess(data)}
           flashMode={RNCamera.Constants.FlashMode.off}
           reactivate={true}
         />

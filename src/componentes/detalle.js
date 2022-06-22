@@ -8,68 +8,90 @@ import {
 } from 'react-native';
 import {Button, Dialog, Portal, List, Card} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome';
-const DetalleActivo = ({navigation, route}) => {
-  console.log(route)
+const DetalleActivo = ({route, navigation}) => {
+  const {datosActivo} = route.params;
+  const {
+    nombre,
+    codigo_activo,
+    asignacion_actual,
+    nombreSegmento,
+    modelo,
+    numero_serie,
+    empresa_nombre,
+    nombre_marca,
+    nombre_obra,
+    estado,
+    costo,
+    imagen,
+  } = datosActivo;
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <List.Item title="Nombre Activo" description="Item description" />
+        <List.Item
+          title="Activo"
+          description={nombre}
+          left={props => <List.Icon {...props} icon="tag" />}
+        />
         <List.Item
           title="Personal Asignado"
-          description="Item description"
+          description={asignacion_actual}
           left={props => <List.Icon {...props} icon="tag" />}
         />
         <List.Item
           title="Código QR"
-          description="Item description"
+          description={codigo_activo}
           left={props => <List.Icon {...props} icon="qrcode" />}
         />
         <List.Item
           title="Segmento"
-          description="Item description"
+          description={nombreSegmento}
           left={props => <List.Icon {...props} icon="folder" />}
         />
         <List.Item
-          title="Tipo Activo"
-          description="Item description"
+          title="Marca"
+          description={nombre_marca}
           left={props => <List.Icon {...props} icon="folder" />}
         />
         <List.Item
           title="Modelo"
-          description="Item description"
+          description={modelo}
           left={props => <List.Icon {...props} icon="folder" />}
         />
         <List.Item
           title="Nº Serie"
-          description="Item description"
+          description={numero_serie}
           left={props => <List.Icon {...props} icon="folder" />}
         />
         <List.Item
           title="Empresa"
-          description="Item description"
+          description={empresa_nombre}
           left={props => <List.Icon {...props} icon="folder" />}
         />
         <List.Item
           title="Obra"
-          description="Item description"
+          description={nombre_obra}
           left={props => <List.Icon {...props} icon="folder" />}
         />
         <List.Item
           title="Estado"
-          description="Item description"
+          description={estado}
           left={props => <List.Icon {...props} icon="folder" />}
         />
         <List.Item
           title="Costo Neto"
-          description="Item description"
+          description={'$' + costo}
           left={props => <List.Icon {...props} icon="folder" />}
         />
         <Card>
-          <Card.Cover source={{uri: 'https://picsum.photos/700'}} />
+          <Card.Cover
+            source={{
+              uri: 'http://grupohexxa.cl/sistemas/activos/imagenes/' + imagen,
+            }}
+          />
         </Card>
       </ScrollView>
     </SafeAreaView>
   );
-}
+};
 
 export default DetalleActivo;
