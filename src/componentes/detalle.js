@@ -8,7 +8,8 @@ import {
 } from 'react-native';
 import {Button, Dialog, Portal, List, Card} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome';
-function DetalleActivo() {
+const DetalleActivo = ({navigation, route}) => {
+  console.log(route)
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
