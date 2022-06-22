@@ -53,6 +53,7 @@ const Lector = () => {
           onRead={({data}) => onSuccess(data)}
           flashMode={RNCamera.Constants.FlashMode.off}
           reactivate={true}
+          reactivateTimeout={5000}
         />
       </ScrollView>
     </SafeAreaView>
