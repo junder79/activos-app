@@ -1,21 +1,68 @@
 import * as React from 'react';
-import {Button, Dialog, Portal} from 'react-native-paper';
+import {
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
+import {Button, Dialog, Portal, List, Card} from 'react-native-paper';
 
-const Detalle = estadoDialog => {
-  //const [visible, setVisible] = React.useState(false);
-
-  const hideDialog = () => setVisible(false);
-
+function DetalleActivo() {
   return (
-    <Portal>
-      <Dialog visible={estadoDialog} onDismiss={hideDialog}>
-        <Dialog.Actions>
-          <Button onPress={() => console.log('Cancel')}>Cancel</Button>
-          <Button onPress={() => console.log('Ok')}>Ok</Button>
-        </Dialog.Actions>
-      </Dialog>
-    </Portal>
+    <SafeAreaView>
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
+        <List.Item
+          title="First Item"
+          description="Item description"
+          left={props => <List.Icon {...props} icon="folder" />}
+        />
+        <List.Item
+          title="First Item"
+          description="Item description"
+          left={props => <List.Icon {...props} icon="folder" />}
+        />
+        <List.Item
+          title="First Item"
+          description="Item description"
+          left={props => <List.Icon {...props} icon="folder" />}
+        />
+        <List.Item
+          title="First Item"
+          description="Item description"
+          left={props => <List.Icon {...props} icon="folder" />}
+        />
+        <List.Item
+          title="First Item"
+          description="Item description"
+          left={props => <List.Icon {...props} icon="folder" />}
+        />
+        <List.Item
+          title="First Item"
+          description="Item description"
+          left={props => <List.Icon {...props} icon="folder" />}
+        />
+        <List.Item
+          title="First Item"
+          description="Item description"
+          left={props => <List.Icon {...props} icon="folder" />}
+        />
+        <List.Item
+          title="First Item"
+          description="Item description"
+          left={props => <List.Icon {...props} icon="folder" />}
+        />
+        <List.Item
+          title="First Item"
+          description="Item description"
+          left={props => <List.Icon {...props} icon="folder" />}
+        />
+        <Card>
+          <Card.Cover source={{uri: 'https://picsum.photos/700'}} />
+        </Card>
+      </ScrollView>
+    </SafeAreaView>
   );
-};
+}
 
-export default Detalle;
+export default DetalleActivo;
