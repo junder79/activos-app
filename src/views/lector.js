@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
+  View,
 } from 'react-native';
 
 import {Button, Dialog, Portal, Paragraph, Appbar} from 'react-native-paper';
@@ -47,16 +48,13 @@ const Lector = () => {
   const [qr, setQR] = useState('');
   const [estadoDialog, setEstadoDialog] = useState(false);
   return (
-    <SafeAreaView>
-      <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <QRCodeScanner
-          onRead={({data}) => onSuccess(data)}
-          flashMode={RNCamera.Constants.FlashMode.off}
-          reactivate={true}
-          reactivateTimeout={5000}
-        />
-      </ScrollView>
-    </SafeAreaView>
+    <QRCodeScanner
+      onRead={({data}) => onSuccess(data)}
+      flashMode={RNCamera.Constants.FlashMode.off}
+      reactivate={true}
+      reactivateTimeout={5000}
+      style={{height: '100%'}}
+    />
   );
 };
 
