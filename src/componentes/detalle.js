@@ -28,7 +28,8 @@ const DetalleActivo = ({ route, navigation }) => {
     imagen2,
     imagen3,
     imagen4,
-    nro_serie_img
+    nro_serie_img,
+    nro_factura
   } = datosActivo;
   console.log(datosActivo)
   return (
@@ -83,6 +84,11 @@ const DetalleActivo = ({ route, navigation }) => {
           title="Estado"
           description={estado}
           left={props => <List.Icon {...props} icon="state-machine" />}
+        />
+        <List.Item
+          title="N° Factura"
+          description={nro_factura}
+          left={props => <List.Icon {...props} icon="file-document" />}
         />
         <List.Item
           title="Costo Neto"
