@@ -1,33 +1,30 @@
 import React from 'react';
-import { Image, View, StyleSheet, Dimensions } from 'react-native'
+import {Image, View, StyleSheet, Dimensions} from 'react-native';
 
-let ScreenWidth = Dimensions.get("window").width - 20;
+let ScreenWidth = Dimensions.get('window').width - 20;
 
 const styles = StyleSheet.create({
-    container: {
-      padding: 10,
-    },
+  container: {
+    padding: 10,
+  },
 
-    logo: {
+  logo: {
     width: ScreenWidth,
-      height: ScreenWidth,
-      
-    },
-  });
+    height: ScreenWidth,
+  },
+});
 
-const Imagen = ({ imagen }) => {
-
-    return (
-        <View style={styles.container}>
-            <Image
-             style={styles.logo}
-                source={{
-                    uri: 'http://grupohexxa.cl/sistemas/activos/imagenes/' + imagen,
-                }}
-
-            />
-         </View>
-    )
-}
+const Imagen = ({imagen}) => {
+  return (
+    <View style={styles.container}>
+      <Image
+        style={styles.logo}
+        source={{
+          uri: 'https://grupohexxa.cl/sistemas/activos/imagenes/' + imagen,
+        }}
+      />
+    </View>
+  );
+};
 
 export default Imagen;
