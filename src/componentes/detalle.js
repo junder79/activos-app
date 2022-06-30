@@ -9,6 +9,8 @@ import {
 import {Button, Dialog, Portal, List, Card} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Imagen from './imagen';
+import 'intl';
+import 'intl/locale-data/jsonp/en';
 
 const DetalleActivo = ({route, navigation}) => {
   const {datosActivo} = route.params;
@@ -92,7 +94,7 @@ const DetalleActivo = ({route, navigation}) => {
         />
         <List.Item
           title="Costo Neto"
-          description={'$ ' + new Intl.NumberFormat('es-MX').format(costo)}
+          description={'$ ' + new Intl.NumberFormat('es-CL').format(costo)}
           left={props => <List.Icon {...props} icon="cash" />}
         />
 
