@@ -6,7 +6,7 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import {Button, Dialog, Portal, List, Card} from 'react-native-paper';
+import {Button, Dialog, Portal, List} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Imagen from './imagen';
 import 'intl';
@@ -40,62 +40,98 @@ const DetalleActivo = ({route, navigation}) => {
         <List.Item
           title="Activo"
           description={nombre}
-          left={props => <List.Icon {...props} icon="tools" />}
+          descriptionStyle={{color: 'black'}}
+          titleStyle={{color: 'black'}}
+          left={props => <List.Icon {...props} icon="tools" color="black" />}
         />
         <List.Item
           title="Personal Asignado"
           description={asignacion_actual}
-          left={props => <List.Icon {...props} icon="account" />}
+          descriptionStyle={{color: 'black'}}
+          titleStyle={{color: 'black'}}
+          left={props => <List.Icon {...props} icon="account" color="black" />}
         />
         <List.Item
           title="Código QR"
           description={codigo_activo}
-          left={props => <List.Icon {...props} icon="qrcode" />}
+          style={estilos.colorTexto}
+          descriptionStyle={{color: 'black'}}
+          titleStyle={{color: 'black'}}
+          left={props => <List.Icon {...props} icon="qrcode" color="black" />}
         />
         <List.Item
           title="Segmento"
           description={nombreSegmento}
-          left={props => <List.Icon {...props} icon="ev-plug-type1" />}
+          style={estilos.colorTexto}
+          descriptionStyle={{color: 'black'}}
+          titleStyle={{color: 'black'}}
+          left={props => (
+            <List.Icon {...props} icon="ev-plug-type1" color="black" />
+          )}
         />
         <List.Item
           title="Marca"
           description={nombre_marca}
-          left={props => <List.Icon {...props} icon="trademark" />}
+          descriptionStyle={{color: 'black'}}
+          titleStyle={{color: 'black'}}
+          left={props => (
+            <List.Icon {...props} icon="trademark" color="black" />
+          )}
         />
         <List.Item
           title="Modelo"
           description={modelo}
-          left={props => <List.Icon {...props} icon="tag" />}
+          descriptionStyle={{color: 'black'}}
+          titleStyle={{color: 'black'}}
+          left={props => <List.Icon {...props} icon="tag" color="black" />}
         />
         <List.Item
           title="Nº Serie"
           description={numero_serie}
-          left={props => <List.Icon {...props} icon="barcode" />}
+          descriptionStyle={{color: 'black'}}
+          titleStyle={{color: 'black'}}
+          left={props => <List.Icon {...props} icon="barcode" color="black" />}
         />
         <List.Item
           title="Empresa"
           description={empresa_nombre}
-          left={props => <List.Icon {...props} icon="home" />}
+          descriptionStyle={{color: 'black'}}
+          titleStyle={{color: 'black'}}
+          left={props => <List.Icon {...props} icon="home" color="black" />}
         />
         <List.Item
           title="Obra"
           description={nombre_obra}
-          left={props => <List.Icon {...props} icon="office-building" />}
+          descriptionStyle={{color: 'black'}}
+          titleStyle={{color: 'black'}}
+          left={props => (
+            <List.Icon {...props} icon="office-building" color="black" />
+          )}
         />
         <List.Item
           title="Estado"
           description={estado}
-          left={props => <List.Icon {...props} icon="state-machine" />}
+          descriptionStyle={{color: 'black'}}
+          titleStyle={{color: 'black'}}
+          left={props => (
+            <List.Icon {...props} icon="state-machine" color="black" />
+          )}
         />
         <List.Item
           title="N° Factura"
           description={nro_factura}
-          left={props => <List.Icon {...props} icon="file-document" />}
+          descriptionStyle={{color: 'black'}}
+          titleStyle={{color: 'black'}}
+          left={props => (
+            <List.Icon {...props} icon="file-document" color="black" />
+          )}
         />
         <List.Item
           title="Costo Neto"
+          descriptionStyle={{color: 'black'}}
+          titleStyle={{color: 'black'}}
           description={'$ ' + new Intl.NumberFormat('es-CL').format(costo)}
-          left={props => <List.Icon {...props} icon="cash" />}
+          left={props => <List.Icon {...props} icon="cash" color="black" />}
         />
 
         <ScrollView horizontal>
@@ -114,4 +150,7 @@ const DetalleActivo = ({route, navigation}) => {
   );
 };
 
+const estilos = StyleSheet.create({
+  colorTexto: 'black',
+});
 export default DetalleActivo;
