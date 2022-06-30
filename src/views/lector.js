@@ -8,7 +8,7 @@ import {
   View,
 } from 'react-native';
 
-import {Button, Dialog, Portal, Paragraph, Appbar} from 'react-native-paper';
+import {Snackbar} from 'react-native-paper';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import {RNCamera} from 'react-native-camera';
 import {
@@ -20,12 +20,17 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 const Lector = () => {
   const navigation = useNavigation();
+  const [visible, setVisible] = useState(false);
+  const esconderSnackBar = () => setVisible(false);
   const onSuccess = async e => {
     setQR(e);
     try {
       const datosActivo = await getInfoActivo(e);
-
-      navigation.navigate('DetalleActivo', {datosActivo: datosActivo});
+      if (datosActivo) {
+        navigation.navigate('DetalleActivo', {datosActivo: datosActivo});
+      } else {
+        setVisible(true);
+      }
     } catch (error) {
       console.error(error);
     }
@@ -48,13 +53,23 @@ const Lector = () => {
   const [qr, setQR] = useState('');
   const [estadoDialog, setEstadoDialog] = useState(false);
   return (
-    <QRCodeScanner
-      onRead={({data}) => onSuccess(data)}
-      flashMode={RNCamera.Constants.FlashMode.off}
-      reactivate={true}
-      reactivateTimeout={5000}
-      style={{height: '100%'}}
-    />
+    <>
+      <QRCodeScanner
+        onRead={({data}) => onSuccess(data)}
+        flashMode={RNCamera.Constants.FlashMode.off}
+        reactivate={true}
+        reactivateTimeout={5000}
+        style={{height: '100%'}}
+      />
+      <Snackbar
+        visible={visible}
+        onDismiss={esconderSnackBar}
+        action={{
+          label: 'Ok',
+        }}>
+        QR no asociado a un Activo
+      </Snackbar>
+    </>
   );
 };
 
