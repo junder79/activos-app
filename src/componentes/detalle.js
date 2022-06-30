@@ -6,12 +6,12 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import { Button, Dialog, Portal, List, Card } from 'react-native-paper';
+import {Button, Dialog, Portal, List, Card} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import Imagen from './imagen'
+import Imagen from './imagen';
 
-const DetalleActivo = ({ route, navigation }) => {
-  const { datosActivo } = route.params;
+const DetalleActivo = ({route, navigation}) => {
+  const {datosActivo} = route.params;
   const {
     nombre,
     codigo_activo,
@@ -29,9 +29,9 @@ const DetalleActivo = ({ route, navigation }) => {
     imagen3,
     imagen4,
     nro_serie_img,
-    nro_factura
+    nro_factura,
   } = datosActivo;
-  console.log(datosActivo)
+
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
@@ -97,27 +97,16 @@ const DetalleActivo = ({ route, navigation }) => {
         />
 
         <ScrollView horizontal>
-          {imagen != '' && (
-            <Imagen imagen={imagen} />
-          )}
+          {imagen != '' && <Imagen imagen={imagen} />}
 
-          {imagen2 != '' && (
-            <Imagen imagen={imagen2} />
-          )}
+          {imagen2 != '' && <Imagen imagen={imagen2} />}
 
-          {imagen3 != '' && (
-            <Imagen imagen={imagen3} />
-          )}
+          {imagen3 != '' && <Imagen imagen={imagen3} />}
 
-          {imagen4 != '' && (
-            <Imagen imagen={imagen4} />
-          )}
+          {imagen4 != '' && <Imagen imagen={imagen4} />}
 
-          {nro_serie_img != '' && (
-            <Imagen imagen={nro_serie_img} />
-          )}
+          {nro_serie_img != '' && <Imagen imagen={nro_serie_img} />}
         </ScrollView>
-
       </ScrollView>
     </SafeAreaView>
   );
