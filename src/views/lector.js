@@ -39,7 +39,7 @@ const Lector = () => {
   const getInfoActivo = async qr => {
     try {
       const resp = await fetch(
-        `https://grupohexxa.cl/sistemas/activos/APP/api-activos.php?codigoString=${qr}`,
+        `https://grupohexxa.com/sistemas/activos/APP/api-activos.php?codigoString=${qr}`,
       );
 
       const [data] = await resp.json();

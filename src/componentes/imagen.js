@@ -20,7 +20,7 @@ const Imagen = ({imagen}) => {
       <Image
         style={styles.logo}
         source={{
-          uri: 'https://grupohexxa.cl/sistemas/activos/imagenes/' + imagen,
+          uri: 'https://grupohexxa.com/sistemas/activos/imagenes/' + imagen,
         }}
       />
     </View>
